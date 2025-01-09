@@ -1,13 +1,11 @@
-/** @type {import('next').NextConfig} */
 import withPWA from 'next-pwa';
 
 const nextConfig = {
-  reactStrictMode: true,
-  // Additional valid configuration options go here
+  reactStrictMode: true, // This goes in the main Next.js config, not in the next-pwa config
+  pwa: {
+    dest: 'public', // Directory where service worker and assets will be placed
+    disable: process.env.NODE_ENV === 'development', // Disable PWA in development mode
+  },
 };
 
-export default withPWA({
-  ...nextConfig,  // Spread the base config here
-  dest: 'public',  // Directory for service worker and assets
-  disable: process.env.NODE_ENV === 'development',  // Disable PWA in development
-});
+export default withPWA(nextConfig);
