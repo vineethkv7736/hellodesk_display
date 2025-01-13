@@ -34,41 +34,42 @@ export default function Page() {
   }, []);
   useEffect(() => {
     if (currentToken >= 0) {
-      const utterance = new SpeechSynthesisUtterance(`Token number ${currentToken}`);
+      const utterance = new SpeechSynthesisUtterance(
+        `Token number ${currentToken}`
+      );
       speechSynthesis.speak(utterance); // Speak the token number
     }
   }, [currentToken]);
 
   useEffect(() => {
     if (isRunning) {
-      const utterance = new SpeechSynthesisUtterance(`Token number ${currentToken}`);
+      const utterance = new SpeechSynthesisUtterance(
+        `Token number ${currentToken}`
+      );
       speechSynthesis.speak(utterance); // Speak the token number
-    }
-    else
-    {
-      const utterance = new SpeechSynthesisUtterance(`Its break Time.. ${message}`);
+    } else {
+      const utterance = new SpeechSynthesisUtterance(
+        `Its break Time.. ${message}`
+      );
       speechSynthesis.speak(utterance); // Speak the token number
     }
   }, [isRunning]);
   return (
     <div className="bg-gray-900 w-screen">
-     
+      <Header isRunning={isRunning} />
       {isRunning ? (
-       // <div className="min-h-screen flex  bg-gray-900 text-white">
-       <div>
-       <Header2/>
+        // <div className="min-h-screen flex  bg-gray-900 text-white">
+        <div>
           <div className="relative">
             <h1 className="text-10xl pt-24 absolute left-80">Token No</h1>
-            <h1 className="text-15xl font-semibold absolute top-60 left-[25rem] w-screen">{currentToken}</h1>
+            <h1 className="text-15xl font-semibold absolute top-60 left-[25rem] w-screen">
+              {currentToken}
+            </h1>
           </div>
-      </div>
+        </div>
       ) : (
         <div className="min-h-screen flex flex-col items-center justify-center bg-black text-white">
-           
-      <Header/>
-          <h1 className="text-13xl font-bold font-serif">
-           Break
-          </h1>
+          <h1 className="text-13xl font-bold font-serif">Break</h1>
           <marquee className="text-6xl">{message}</marquee>
         </div>
       )}
