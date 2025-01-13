@@ -15,7 +15,7 @@ function Header() {
     setIsFullscreen(!isFullscreen);
   };
   return (
-    <div className="absolute top-0 left-0 w-screen p-6 text-white">
+    <div className="absolute top-0 left-0 w-screen p-6  ">
       <div className="flex items-center justify-between">
         <Image src={"/prc-official.png"} width={100} height={100} alt=".." />
         <div className="flex flex-col items-center gap-2">
