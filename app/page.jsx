@@ -55,17 +55,16 @@ export default function Page() {
     }
   }, [isRunning]);
   return (
-    <div className="bg-gray-900 w-screen">
+    <div className="w-full h-screen">
       <Header isRunning={isRunning} />
       {isRunning ? (
         // <div className="min-h-screen flex  bg-gray-900 text-white">
-        <div>
-          <div className="relative">
-            <h1 className="text-10xl pt-24 absolute left-80">Token No</h1>
-            <h1 className="text-15xl font-semibold absolute top-60 left-[25rem] w-screen">
-              {currentToken}
-            </h1>
-          </div>
+
+        <div className="relative flex h-full flex-col justify-center items-center pt-20">
+          <h1 className="text-10xl">Token No</h1>
+          <h1 className="text-15xl font-semibold leading-[0.9] tabular-nums">
+            {currentToken}
+          </h1>
         </div>
       ) : (
         <div className="min-h-screen flex flex-col items-center justify-center bg-black text-white">
