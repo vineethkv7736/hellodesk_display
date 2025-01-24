@@ -15,7 +15,7 @@ function Header({isRunning}) {
     setIsFullscreen(!isFullscreen);
   };
   return (
-    <div className={`absolute top-0 left-0 w-screen p-6 ${!isRunning && "bg-black text-white"} `}>
+    <div className={`absolute top-0 left-0 w-screen z-50 p-6 ${!isRunning && "bg-black text-white"} `}>
       <div className="flex items-center justify-center relative">
       <button className="absolute top-2 left-2" onClick={toggleFullscreen}>
         <Image src={"/prc-official.png"} width={100} height={100} alt=".." />
